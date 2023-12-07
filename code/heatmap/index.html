@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wind + Temperature</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.umd.min.js"></script>
+    <link
+      href="https://cdn.maptiler.com/maptiler-sdk-js/v1.1.1/maptiler-sdk.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.maptiler.com/maptiler-weather/v1.0.0/maptiler-weather.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="time-info">
+      <span id="time-text"></span>
+      <button id="play-pause-bt" class="button">Play 3600x</button>
+      <input type="range" id="time-slider" min="0" max="11" step="1" />
+    </div>
+
+    <div id="variable-name">Temperature + Wind</div>
+    <div id="pointer-data"></div>
+    <div id="map"></div>
+
+    <!-- color scale for your temperature and wind data -->
+    <div id="color-scale">
+      <h3>Color Scale</h3>
+    </div>
+    <script>
+      const colorRanges = [
+        // Color Names:
+        
+        { minTemp: -40, maxTemp: -30, color: "#B16EAA" }, // Purple
+        { minTemp: -30, maxTemp: -20, color: "#0000FF" }, // Blue
+        { minTemp: -20, maxTemp: -10, color: "#00FFFF" }, // Cyan
+        { minTemp: -10, maxTemp: 10, color: "#546E51" }, // Ebony
+        { minTemp: 10, maxTemp: 30, color: "#F4BA38" }, // Saffron
+        { minTemp: 30, maxTemp: 45, color: "#814736" }, // Bole
+      ];
+
+      const colorScaleContainer = document.getElementById("color-scale");
+
+      colorRanges.forEach((range) => {
+        const scaleElement = document.createElement("div");
+        scaleElement.style.backgroundColor = range.color;
+        scaleElement.textContent = `${range.minTemp}°C - ${range.maxTemp}°C`;
+        colorScaleContainer.appendChild(scaleElement);
+      });
+    </script>
+    <script src="Map.js"></script>
+  </body>
+</html>

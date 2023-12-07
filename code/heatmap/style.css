@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#time-info {
+  position: fixed;
+  width: 60vw;
+  bottom: 0;
+  z-index: 1;
+  margin: 10px;
+  text-shadow: 0px 0px 5px black;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+}
+
+#time-slider {
+  width: 100%;
+  height: fit-content;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  filter: drop-shadow(0 0 7px #000a);
+  margin-top: 10px;
+}
+
+#pointer-data {
+  z-index: 1;
+  position: fixed;
+  font-size: 50px;
+  font-weight: 900;
+  margin: 27px 0px 0px 10px;
+  color: #fff;
+  text-shadow: 0px 0px 10px #0007;
+}
+
+#variable-name {
+  z-index: 1;
+  position: fixed;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 5px 0px 0px 10px;
+  color: #fff;
+  text-shadow: 0px 0px 10px #0007;
+}
+
+.button {
+  cursor: pointer;
+  width: auto;
+  padding: 8px;
+  border-radius: 3px;
+  margin: 10px 0 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #3174ff;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+/* color scale for your temperature and wind data */
+#color-scale {
+  position: absolute;
+  top: 9px;
+  right: 50px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  /* Add hover effect */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Color scale heading */
+#color-scale > h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+#color-scale div:hover {
+  background-color: #f0f0f0; /* Change to a lighter color on hover */
+  box-shadow: 0px 0px 10px #888; /* Add a subtle shadow on hover */
+}
+
+#color-scale div {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
+}
+
+#color-scale div:hover {
+  transform: scale(1.3); /* Scale up by 10% on hover */
+}
+
+#color-scale div > div {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
